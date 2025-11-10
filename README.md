@@ -35,7 +35,7 @@ connect-four/
 └─ README.md           # This file
 ```
 
-You will also have **local configuration files** that are *not committed* to GitHub (explained below).
+You will also need to have **local configuration files** that are *not committed* to GitHub.
 
 ---
 
@@ -101,9 +101,6 @@ function getConnParams() {
 
 module.exports = { getConnParams };
 ```
-
-> This file is also **not** pushed to GitHub (it’s ignored via `.gitignore`).
-
 ### 6️⃣ Start the server
 
 ```bash
