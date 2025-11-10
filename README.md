@@ -67,8 +67,8 @@ CREATE TABLE boards (
   board JSON NOT NULL,
   player1_id VARCHAR(255),
   player2_id VARCHAR(255),
-  curr_player TINYINT DEFAULT 1,
-  winner TINYINT DEFAULT 0
+  curr_player INT DEFAULT 1,
+  winner INT DEFAULT 0
 );
 ```
 
