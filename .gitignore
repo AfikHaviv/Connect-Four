@@ -1,3 +1,6 @@
 node_modules/
 .env
 connParams.js
+
+# VS Code settings
+.vscode/
