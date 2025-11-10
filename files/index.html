@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Connect Four</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h1>Connect Four</h1>
+        <div id="game-board">
+            <label id="currentPlayerLabel">Current Turn: Player 1</label>
+            <label id="myName">Name: </label>
+        </div>
+
+        <div id="rowSelection">
+            <button class="columnSelection" id="column0" onclick="makeMove(this)">col 1</button>
+            <button class="columnSelection" id="column1" onclick="makeMove(this)">col 2</button>
+            <button class="columnSelection" id="column2" onclick="makeMove(this)">col 3</button>
+            <button class="columnSelection" id="column3" onclick="makeMove(this)">col 4</button>
+            <button class="columnSelection" id="column4" onclick="makeMove(this)">col 5</button>
+            <button class="columnSelection" id="column5" onclick="makeMove(this)">col 6</button>
+            <button class="columnSelection" id="column6" onclick="makeMove(this)">col 7</button>
+
+            
+        </div>
+        <canvas id="connectFourCanvas" width="700" height="600"></canvas>
+        <script src="script.js"></script>
+    </body>
+</html>

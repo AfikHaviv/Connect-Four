@@ -1,0 +1,139 @@
+
+/* =========
+   Base + Theme
+   ========= */
+:root{
+  --bg: #0f1220;
+  --card: #171b3b;
+  --text: #e9ecff;
+  --muted: #a9b1d6;
+  --primary: #6aa0ff;
+  --primary-2: #7bd6ff;
+  --ring: rgba(123,214,255,.45);
+  --shadow: 0 10px 30px rgba(2,10,44,.35), 0 2px 8px rgba(2,10,44,.25);
+}
+
+* { box-sizing: border-box; }
+
+body{
+  margin: 0;
+  padding: 24px;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #1a2048 0%, transparent 60%),
+    radial-gradient(1000px 700px at 90% 10%, #0e3e56 0%, transparent 55%),
+    linear-gradient(180deg, var(--bg) 0%, #0a0d1a 100%);
+  min-height: 100vh;
+}
+
+/* =========
+   Heading
+   ========= */
+h1{
+  margin: 4px 0 22px;
+  text-align: center;
+  font-size: clamp(26px, 3.2vw, 36px);
+  letter-spacing: .3px;
+  line-height: 1.15;
+  background: linear-gradient(90deg, #c6d4ff 0%, #90b7ff 45%, #7bd6ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 12px rgba(123,214,255,.15);
+}
+
+/* =========
+   Game info labels
+   ========= */
+#game-board{
+  width: 700px;
+  margin: 0 auto 16px;
+  text-align: center;
+}
+
+#currentPlayerLabel,
+#myName{
+  display: block;
+  margin: 4px 0;
+  font-weight: 700;
+}
+
+#currentPlayerLabel{
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(106,160,255,.18), rgba(123,214,255,.18));
+  border: 1px solid rgba(123,214,255,.25);
+  box-shadow: 0 0 0 3px rgba(123,214,255,.15) inset, 0 8px 20px rgba(2,10,44,.25);
+  animation: glowPulse 2.4s ease-in-out infinite;
+}
+
+#myName{
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* =========
+   Column Buttons Row
+   ========= */
+#rowSelection{
+  width: 700px; /* match canvas width */
+  margin: 0 auto 14px;
+  display: flex;
+  justify-content: space-between;
+  gap: 0;
+  padding: 0;
+}
+
+/* Each button must fit exactly 1/7th of 700px width (100px each) */
+.columnSelection{
+  flex: 0 0 100px;
+  height: 40px;
+  border: 1px solid rgba(123,214,255,.18);
+  border-radius: 6px;
+  background:
+    linear-gradient(180deg, #1f264f 0%, #1a2046 100%);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: transform .12s ease, box-shadow .12s ease, background-color .12s ease;
+}
+
+.columnSelection:hover:enabled{
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,.35), 0 0 0 2px var(--ring);
+}
+
+.columnSelection:active:enabled{
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0,0,0,.25);
+}
+
+.columnSelection:disabled{
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+/* =========
+   Canvas
+   ========= */
+#connectFourCanvas{
+  display: block;
+  margin: 14px auto 26px;
+  border-radius: 12px;
+  box-shadow:
+    inset 0 0 0 1px rgba(123,214,255,.15),
+    0 18px 40px rgba(5,12,40,.55),
+    0 2px 10px rgba(0,0,0,.35);
+  background: #141938;
+}
+
+/* =========
+   Animations
+   ========= */
+@keyframes glowPulse{
+  0%   { box-shadow: 0 0 0 0 rgba(123,214,255,.28), 0 8px 20px rgba(2,10,44,.25); }
+  50%  { box-shadow: 0 0 0 6px rgba(123,214,255,.0), 0 8px 20px rgba(2,10,44,.25); }
+  100% { box-shadow: 0 0 0 0 rgba(123,214,255,.28), 0 8px 20px rgba(2,10,44,.25); }
+}
