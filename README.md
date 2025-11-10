@@ -35,7 +35,7 @@ connect-four/
 └─ README.md           # This file
 ```
 
-You will also have **local configuration files** that are *not committed* to GitHub (explained below).
+You will also need to have **local configuration files** that are *not committed* to GitHub.
 
 ---
 
@@ -67,8 +67,8 @@ CREATE TABLE boards (
   board JSON NOT NULL,
   player1_id VARCHAR(255),
   player2_id VARCHAR(255),
-  curr_player TINYINT DEFAULT 1,
-  winner TINYINT DEFAULT 0
+  curr_player INT DEFAULT 1,
+  winner INT DEFAULT 0
 );
 ```
 
@@ -101,9 +101,6 @@ function getConnParams() {
 
 module.exports = { getConnParams };
 ```
-
-> This file is also **not** pushed to GitHub (it’s ignored via `.gitignore`).
-
 ### 6️⃣ Start the server
 
 ```bash
